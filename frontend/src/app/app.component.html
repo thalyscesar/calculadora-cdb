@@ -1,0 +1,41 @@
+
+<div class="container">
+  <h1>Calculadora de Investimento</h1>
+  <form [formGroup]="cdbForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="valor">Valor Monetário (R$):</label>
+      <input 
+        type="number" 
+        id="valor" 
+        class="form-control" 
+        name="valor" 
+        formControlName="valor"
+        required
+        min="1"
+        placeholder="Digite um valor positivo">
+    </div>
+
+    <div class="form-group">
+      <label for="prazo">Prazo (meses):</label>
+      <input 
+        type="number" 
+        id="prazo" 
+        class="form-control" 
+        name="prazo" 
+        formControlName="prazo"
+        required
+        min="2"
+        placeholder="Digite o prazo em meses">
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="!cdbForm.valid">Calcular</button>
+  </form>
+
+  <div *ngIf="resultado" class="resultado">
+    <h2>Resultado</h2>
+    <p><strong>Valor Bruto:</strong> R$  {{ investimentoCDBModel.valorBruto }} </p>
+    <p><strong>ValorLiquido:</strong>  R$ {{ investimentoCDBModel.valorLiquido }}</p>
+  </div>
+</div>
+
+
