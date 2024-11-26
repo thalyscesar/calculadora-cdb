@@ -16,7 +16,7 @@ namespace CalculadoraCDB.Tests
            var valorBruto = calculadoraCDB.CalcularValorBruto();
 
            // Assert
-           Assert.Equal(316, valorBruto);
+           Assert.Equal(635.853m, Math.Round(valorBruto,3));
 
         }
 
@@ -25,13 +25,13 @@ namespace CalculadoraCDB.Tests
         public void CalcularValorLiquidoDeveRetornarValorEsperado()
         {
             // Arrange
-            var calculadoraCDB = new CalculadoraDoCDB(600, 6);
+            var calculadoraCDB = new CalculadoraDoCDB(800, 6);
 
             // Act 
-            var valorBruto = calculadoraCDB.CalcularValorLiquido();
+            var valorLiquido = Math.Round(calculadoraCDB.CalcularValorLiquido(), 3);
 
             // Assert
-            Assert.Equal(316, valorBruto);
+            Assert.Equal(837.049M, valorLiquido);
         }
 
         [Fact]
@@ -45,7 +45,7 @@ namespace CalculadoraCDB.Tests
             var imposto = calculadoraCDB.ObterTaxaImposto();
 
             // Assert
-            Assert.Equal(316, imposto);
+            Assert.Equal(0.225M, imposto);
 
         }
 
@@ -60,7 +60,7 @@ namespace CalculadoraCDB.Tests
             var imposto = calculadoraCDB.ObterTaxaImposto();
 
             // Assert
-            Assert.Equal(316, imposto);
+            Assert.Equal(0.20M, imposto);
         }
 
         [Fact]
@@ -74,7 +74,7 @@ namespace CalculadoraCDB.Tests
             var imposto = calculadoraCDB.ObterTaxaImposto();
 
             // Assert
-            Assert.Equal(316, imposto);
+            Assert.Equal(0.175M, imposto);
         }
 
 
@@ -90,7 +90,7 @@ namespace CalculadoraCDB.Tests
             var imposto = calculadoraCDB.ObterTaxaImposto();
 
             // Assert
-            Assert.Equal(316, imposto);
+            Assert.Equal(0.15M, imposto);
         }
 
 
